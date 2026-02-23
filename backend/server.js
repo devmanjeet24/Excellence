@@ -19,7 +19,7 @@ app.use(cors({
   credentials: true    // allow cookies
 }));
 
-app.options("*", cors()); // handle preflight
+
 
 app.use(express.json());
 app.use(cookieParser());
