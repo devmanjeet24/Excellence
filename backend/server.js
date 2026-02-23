@@ -12,12 +12,19 @@ connectDatabase();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+app.use(cors({
+  origin: "https://singular-pastelito-96f84d.netlify.app",
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
 
 app.get("/", (req, res) => {
-    res.send("Hello manjeeet 21:44");
+    res.send("Hello manjeeet 21:53");
 });
 
 app.use("/api/auth", authRoutes);
