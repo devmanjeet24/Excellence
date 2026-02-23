@@ -16,12 +16,12 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
     // origin: "http://localhost:5173",
-    origin: "https://unique-truffle-fa8a4f.netlify.app/",
+    origin: "https://singular-pastelito-96f84d.netlify.app/",
     credentials: true
 }));
 
 app.get("/", (req, res) => {
-    res.send("Hello");
+    res.send("Hello manjeeet 21:36");
 });
 
 app.use("/api/auth", authRoutes);
