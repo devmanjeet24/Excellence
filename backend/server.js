@@ -13,10 +13,11 @@ connectDatabase();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-/* ✅ FULLY OPEN CORS (DEV MODE) */
+
 app.use(cors({
-  origin: true,        // allow ALL origins dynamically
-  credentials: true    // allow cookies
+  origin: "https://singular-pastelito-96f84d.netlify.app/",
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
 }));
 
 
