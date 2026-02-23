@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.get("/", (req, res) => {
-    res.send("Server running successfully 22:0934334");
+    res.send("Server running successfully 22:54");
 });
 
 app.use("/api/auth", authRoutes);
