@@ -122,11 +122,15 @@ button.submit.pagin
 }
 
 .itemtodo {
-    width: 100%;
+width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background: #fff;
+    padding: 20px;
+    border-radius: 23px;
+    margin-bottom: 20px;
 }
 
 .btnitem {
@@ -134,6 +138,7 @@ button.submit.pagin
     justify-content: space-between;
     width: 99%;
     margin-top: 8px;
+    /* margin-bottom: 20px; */
 }
 
 button.submit.btnit {
