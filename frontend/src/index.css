@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.conatiner {
+  background: #ab7957;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  background: #eee;
+  width: 42%;
+  padding: 40px;
+  border-radius: 15px;
+}
+
+.box h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 49px;
+    font-weight: 300;
+}
+
+.box form {
+  display: flex;
+  gap: 25px;
+  flex-direction: column;
+}
+
+.box form .input {
+width: 100%;
+    background: #fff;
+    padding: 12px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.box form .input>input {
+    padding: 4px;
+    font-size: 16px;
+    color: #7a7a7a;
+     border: none;
+  outline: none;
+  border-bottom: 2px solid #ab7957;
+}
+
+.box form .input>input:focus{
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #ab7957;
+}
+
+.submit {
+    background: #ab7957;
+    border: none;
+    outline: none;
+    padding: 12px;
+    border-radius: 35px;
+    font-size: 22px;
+    color: #fff;
+}
+
+.submit:hover{
+   background: #e0ac89;
+   color: #984209;
+}
+
+
+.tododashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dashboardbtn {
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.tododashboard input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #ab7957;
+}
+
+button.submit.pagin
+ {
+    padding: 5px 26px;
+    font-size: 18px;
+    margin-top: 35px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+
+.todoshere {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 20px;
+        margin-bottom: 25px;
+}
+
+.itemtodo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.btnitem {
+    display: flex;
+    justify-content: space-between;
+    width: 99%;
+    margin-top: 8px;
+}
+
+button.submit.btnit {
+    padding: 4px 16px;
+    font-size: 14px;
+}
