@@ -14,14 +14,10 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({
-    // origin: "http://localhost:5173",
-    origin: "https://singular-pastelito-96f84d.netlify.app/",
-    credentials: true
-}));
+app.use(cors());
 
 app.get("/", (req, res) => {
-    res.send("Hello manjeeet 21:36");
+    res.send("Hello manjeeet 21:44");
 });
 
 app.use("/api/auth", authRoutes);
