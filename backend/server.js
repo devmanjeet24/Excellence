@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 5000;
 
 
 app.use(cors({
-  origin: "https://singular-pastelito-96f84d.netlify.app/",
+  origin: "https://singular-pastelito-96f84d.netlify.app",
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
 }));
@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.get("/", (req, res) => {
-    res.send("Server running successfully 🚀 22:0934334");
+    res.send("Server running successfully 22:0934334");
 });
 
 app.use("/api/auth", authRoutes);
