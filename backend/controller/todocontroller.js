@@ -1,34 +1,6 @@
 const Todo = require("../model/Todo.js");
 
 
-// export const createTodo = async (req, res) => {
-//   const todo = await Todo.create({
-//     user: req.user._id,
-//     title: req.body.title,
-//     description: req.body.description,
-//   });
-
-//   res.status(201).json(todo);
-// };
-
-// export const getTodos = async (req, res) => {
-//   const { page = 1, limit = 5, search = "" } = req.query;
-
-//   const query = {
-//     user: req.user._id,
-//     title: { $regex: search, $options: "i" },
-//   };
-
-//   const todos = await Todo.find(query)
-//     .skip((page - 1) * limit)
-//     .limit(Number(limit));
-
-//   const total = await Todo.countDocuments(query);
-
-//   res.json({ todos, total });
-// };
-
-
 
 const createTodo = async (req, res) => {
   try {
