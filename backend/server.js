@@ -14,20 +14,24 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 
-app.use(cors({
+
+
+const corsOptions = {
   origin: "https://reliable-frangollo-4b95bf.netlify.app",
-    // origin: "http://localhost:5173",
   credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-}));
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
 
 
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions)); 
 
 app.use(express.json());
 app.use(cookieParser());
 
 app.get("/", (req, res) => {
-    res.send("Server running successfully 22:54 23:18");
+    res.send("Server running successfully 10:48");
 });
 
 app.use("/api/auth", authRoutes);
