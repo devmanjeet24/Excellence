@@ -26,13 +26,13 @@ const corsOptions = {
 
 
 app.use(cors(corsOptions));
-app.options("*", (req, res) => res.sendStatus(200));
+// app.options("*", (req, res) => res.sendStatus(200));
 
 app.use(express.json());
 app.use(cookieParser());
 
 app.get("/", (req, res) => {
-    res.send("Server running successfully 18:34");
+    res.send("Server running successfully 18:50");
 });
 
 app.use("/api/auth", authRoutes);
