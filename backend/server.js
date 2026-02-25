@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 5000;
 
 
 const corsOptions = {
-  origin: "https://marvelous-dieffenbachia-de37b7.netlify.app",
+  origin: "https://spontaneous-chebakia-c0484d.netlify.app",
 //   origin: "http://localhost:5173",
   credentials: true,
 //   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
@@ -32,7 +32,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.get("/", (req, res) => {
-    res.send("Server running successfully 10:48");
+    res.send("Server running successfully 18:12");
 });
 
 app.use("/api/auth", authRoutes);
