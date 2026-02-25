@@ -9,6 +9,7 @@ import { AuthContext } from './context/AuthContext';
 import Dashboard from './Pages/Dashboard';
 import AddTodo from './Pages/AddTodo';
 import EditTodo from './Pages/EditTodo';
+import Checkdesign from './Pages/Checkdesign';
 
 function App() {
   const { user } = useContext(AuthContext);
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/checkdesign" element={<Checkdesign />} />
 
 
           <Route

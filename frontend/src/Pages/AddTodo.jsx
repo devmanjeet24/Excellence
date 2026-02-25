@@ -1,38 +1,108 @@
-import { useState } from "react";
-import API from "../api/Axios";
 import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import API from "../api/Axios";
+import Navbar from "../Components/Navbar";
 
 export default function AddTodo() {
-    const [form, setForm] = useState({});
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        await API.post("/todos", form);
-        navigate("/dashboard");
-    };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-    return (
+  const onSubmit = async (data) => {
+    try {
+      await API.post("/todos", data);
+      navigate("/dashboard");
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-        <div className='conatiner'>
+  return (
+    <>
+      <Navbar />
 
-            <div className="box">
+      <div
+        className="flex justify-center items-center min-h-screen bg-gray-200"
+        style={{ padding: "20px" }}
+      >
 
-                <h1>Add Todo</h1>
+        
+        <div
+          className="bg-white rounded-2xl shadow-xl"
+          style={{ width: "500px", padding: "30px", margin: "20px" }}
+        >
+          {/* Heading */}
+          <h1
+            style={{
+              fontSize: "28px",
+              fontWeight: "700",
+              color: "#4C1D95",
+              marginBottom: "25px",
+              textAlign: "center",
+            }}
+          >
+            Add Todo
+          </h1>
 
-                <form onSubmit={handleSubmit}>
-                    <div className='input'>
-                    <input placeholder="Title" onChange={e => setForm({ ...form, title: e.target.value })} />
-                    </div>
+          {/* Form */}
+          <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
 
-                    <div className='input'>
-                    <input placeholder="Description" onChange={e => setForm({ ...form, description: e.target.value })} />
-                    </div>
-                    <button className="submit">Add</button>
-                </form>
+            {/* Title */}
+            <input
+              type="text"
+              placeholder="Title"
+              {...register("title", { required: "Title is required" })}
+              style={{
+                padding: "12px 15px",
+                borderRadius: "12px",
+                border: "1px solid #9CA3AF",
+              }}
+            />
+            {errors.title && (
+              <p style={{ color: "red", fontSize: "14px" }}>{errors.title.message}</p>
+            )}
 
-            </div>
+            {/* Description */}
+            <textarea
+              placeholder="Description"
+              {...register("description", { required: "Description is required" })}
+              style={{
+                padding: "12px 15px",
+                borderRadius: "12px",
+                border: "1px solid #9CA3AF",
+                minHeight: "100px",
+                resize: "none",
+              }}
+            />
+            {errors.description && (
+              <p style={{ color: "red", fontSize: "14px" }}>
+                {errors.description.message}
+              </p>
+            )}
 
+            {/* Submit Button */}
+            <button
+              type="submit"
+              style={{
+                padding: "12px 0",
+                borderRadius: "12px",
+                backgroundColor: "#7C3AED",
+                color: "white",
+                fontWeight: "600",
+                fontSize: "16px",
+                marginTop: "10px",
+                cursor: "pointer",
+              }}
+            >
+              Add
+            </button>
+          </form>
         </div>
-    );
+      </div>
+    </>
+  );
 }

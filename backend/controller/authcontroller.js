@@ -3,7 +3,7 @@ const User = require("../model/User");
 const bcrypt = require("bcryptjs");
 const generateToken = require("../utils/generateToken");
 
- const signup = async (req, res) => {
+const signup = async (req, res) => {
   const { name, email, password } = req.body;
 
   const emailRegex = /\S+@\S+\.\S+/;
@@ -34,7 +34,7 @@ const generateToken = require("../utils/generateToken");
   });
 };
 
- const login = async (req, res) => {
+const login = async (req, res) => {
   const { email, password } = req.body;
 
   const user = await User.findOne({ email });
@@ -54,5 +54,19 @@ const generateToken = require("../utils/generateToken");
   });
 };
 
+const logout = async (req, res) => {
+  res.cookie("token", "", {
+    httpOnly: true,
+    secure: true,
+    sameSite: "none",
+  })
 
-module.exports = { signup, login };
+  res.status(200).json({
+    success: true,
+    message: "Successfully logged out"
+  })
+
+}
+
+
+module.exports = { signup, login, logout };

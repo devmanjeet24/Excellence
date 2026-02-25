@@ -1,8 +1,11 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+   font-family: "Montserrat", sans-serif;
 }
 
 
@@ -67,6 +70,7 @@ width: 100%;
     border-radius: 35px;
     font-size: 22px;
     color: #fff;
+    box-shadow: 0px 3px 4px 0px rgba(0,0,0,0.24);
 }
 
 .submit:hover{
@@ -144,4 +148,24 @@ width: 100%;
 button.submit.btnit {
     padding: 4px 16px;
     font-size: 14px;
+}
+
+
+/* navbar css start from here  */
+.Navbar {
+    background: #784c2f;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Navlogo h1 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+button.btnhead {
+    padding: 12px 30px;
 }
